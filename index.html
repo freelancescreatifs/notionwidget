@@ -3,7 +3,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Feed Instagram 4x3</title>
+  <title>Feed Instagram 3x4</title>
   <style>
     body {
       background: white;
@@ -18,10 +18,10 @@
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 6px;
       width: 95vw;
-      max-width: 500px;
+      max-width: 450px;
       margin: 0 auto;
     }
     .cell {
@@ -149,7 +149,6 @@
             carousel.appendChild(leftArrow);
             carousel.appendChild(rightArrow);
             cell.appendChild(carousel);
-
           } else {
             const img = document.createElement("img");
             img.src = post.images[0];
