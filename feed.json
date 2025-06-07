@@ -1,0 +1,100 @@
+[
+  {
+    "type": "carrousel",
+    "title": "Carrousel Astuces",
+    "date": "2025-06-10",
+    "images": [
+      "https://via.placeholder.com/300?text=Slide+1",
+      "https://via.placeholder.com/300?text=Slide+2",
+      "https://via.placeholder.com/300?text=Slide+3"
+    ]
+  },
+  {
+    "type": "image",
+    "title": "Vid\u00e9o teaser",
+    "date": "2025-06-11",
+    "images": [
+      "https://via.placeholder.com/300?text=Vid\u00e9o"
+    ]
+  },
+  {
+    "type": "image",
+    "title": "Astuce express",
+    "date": "2025-06-12",
+    "images": [
+      "https://via.placeholder.com/300?text=Astuce"
+    ]
+  },
+  {
+    "type": "image",
+    "title": "Behind the scenes",
+    "date": "2025-06-13",
+    "images": [
+      "https://via.placeholder.com/300?text=BTS"
+    ]
+  },
+  {
+    "type": "image",
+    "title": "T\u00e9moignage client",
+    "date": "2025-06-14",
+    "images": [
+      "https://via.placeholder.com/300?text=Temoignage"
+    ]
+  },
+  {
+    "type": "image",
+    "title": "Podcast du jour",
+    "date": "2025-06-15",
+    "images": [
+      "https://via.placeholder.com/300?text=Podcast"
+    ]
+  },
+  {
+    "type": "image",
+    "title": "R\u00e9el cr\u00e9atif",
+    "date": "2025-06-16",
+    "images": [
+      "https://via.placeholder.com/300?text=Reel"
+    ]
+  },
+  {
+    "type": "image",
+    "title": "Tip visuel",
+    "date": "2025-06-17",
+    "images": [
+      "https://via.placeholder.com/300?text=Tips"
+    ]
+  },
+  {
+    "type": "image",
+    "title": "Identifi\u00e9 !",
+    "date": "2025-06-18",
+    "images": [
+      "https://via.placeholder.com/300?text=Tag"
+    ]
+  },
+  {
+    "type": "image",
+    "title": "Collab du mois",
+    "date": "2025-06-19",
+    "images": [
+      "https://via.placeholder.com/300?text=Collab"
+    ]
+  },
+  {
+    "type": "image",
+    "title": "Promo express",
+    "date": "2025-06-20",
+    "images": [
+      "https://via.placeholder.com/300?text=Promo"
+    ]
+  },
+  {
+    "type": "image",
+    "title": "Live replay",
+    "date": "2025-06-21",
+    "images": [
+      "https://via.placeholder.com/300?text=Live"
+    ]
+  }
+]
