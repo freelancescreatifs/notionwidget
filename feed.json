@@ -11,90 +11,90 @@
   },
   {
     "type": "image",
-    "title": "Vid\u00e9o teaser",
-    "date": "2025-06-11",
-    "images": [
-      "https://via.placeholder.com/300?text=Vid\u00e9o"
-    ]
-  },
-  {
-    "type": "image",
-    "title": "Astuce express",
+    "title": "Post 2",
     "date": "2025-06-12",
     "images": [
-      "https://via.placeholder.com/300?text=Astuce"
+      "https://via.placeholder.com/300?text=Post+2"
     ]
   },
   {
     "type": "image",
-    "title": "Behind the scenes",
+    "title": "Post 3",
     "date": "2025-06-13",
     "images": [
-      "https://via.placeholder.com/300?text=BTS"
+      "https://via.placeholder.com/300?text=Post+3"
     ]
   },
   {
     "type": "image",
-    "title": "T\u00e9moignage client",
+    "title": "Post 4",
     "date": "2025-06-14",
     "images": [
-      "https://via.placeholder.com/300?text=Temoignage"
+      "https://via.placeholder.com/300?text=Post+4"
     ]
   },
   {
     "type": "image",
-    "title": "Podcast du jour",
+    "title": "Post 5",
     "date": "2025-06-15",
     "images": [
-      "https://via.placeholder.com/300?text=Podcast"
+      "https://via.placeholder.com/300?text=Post+5"
     ]
   },
   {
     "type": "image",
-    "title": "R\u00e9el cr\u00e9atif",
+    "title": "Post 6",
     "date": "2025-06-16",
     "images": [
-      "https://via.placeholder.com/300?text=Reel"
+      "https://via.placeholder.com/300?text=Post+6"
     ]
   },
   {
     "type": "image",
-    "title": "Tip visuel",
+    "title": "Post 7",
     "date": "2025-06-17",
     "images": [
-      "https://via.placeholder.com/300?text=Tips"
+      "https://via.placeholder.com/300?text=Post+7"
     ]
   },
   {
     "type": "image",
-    "title": "Identifi\u00e9 !",
+    "title": "Post 8",
     "date": "2025-06-18",
     "images": [
-      "https://via.placeholder.com/300?text=Tag"
+      "https://via.placeholder.com/300?text=Post+8"
     ]
   },
   {
     "type": "image",
-    "title": "Collab du mois",
+    "title": "Post 9",
     "date": "2025-06-19",
     "images": [
-      "https://via.placeholder.com/300?text=Collab"
+      "https://via.placeholder.com/300?text=Post+9"
     ]
   },
   {
     "type": "image",
-    "title": "Promo express",
+    "title": "Post 10",
     "date": "2025-06-20",
     "images": [
-      "https://via.placeholder.com/300?text=Promo"
+      "https://via.placeholder.com/300?text=Post+10"
     ]
   },
   {
     "type": "image",
-    "title": "Live replay",
+    "title": "Post 11",
     "date": "2025-06-21",
     "images": [
-      "https://via.placeholder.com/300?text=Live"
+      "https://via.placeholder.com/300?text=Post+11"
+    ]
+  },
+  {
+    "type": "image",
+    "title": "Post 12",
+    "date": "2025-06-22",
+    "images": [
+      "https://via.placeholder.com/300?text=Post+12"
     ]
   }
 ]
