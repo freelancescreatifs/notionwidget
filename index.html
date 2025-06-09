@@ -1,10 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <title>Feed Instagram 3x4</title>
   <style>
-    body {
+    body 
+      <div class="logo">
+    <img src="image 1.png" alt="Instagram Logo">
+  </div>
+    {
       background: white;
       font-family: sans-serif;
       margin: 0;
@@ -35,15 +40,17 @@
     .cell:hover {
       transform: scale(1.03);
     }
-    .carousel, .carousel img,
-    .cell img:not(.carousel img) {
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .carousel img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 6px;
-    }
-    .carousel img {
       display: none;
+      border-radius: 6px;
     }
     .carousel img.active {
       display: block;
@@ -67,130 +74,107 @@
     .nav-arrow.right {
       right: 4px;
     }
+    .cell img:not(.carousel img) {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+    }
     .overlay {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
       bottom: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.6);
       color: white;
       font-size: 12px;
-      padding: 6px;
+      padding: 4px;
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 0 0 6px 6px;
     }
     .cell:hover .overlay {
       opacity: 1;
     }
-    .overlay-title {
-      font-weight: bold;
-      text-align: left;
-    }
-    .overlay-tag {
-      text-align: right;
-      font-style: italic;
-      font-size: 11px;
-    }
     .logo {
-      text-align: center;
-      margin: 10px 0;
-    }
-    .logo img {
-      max-width: 180px;
-      height: auto;
-    }
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.logo img {
+  max-width: 180px;
+  height: auto;
+}
   </style>
 </head>
 <body>
-
-  <div class="logo">
-    <img src="image 1.png" alt="Instagram Logo">
-  </div>
 
   <div class="icons">📷 🎬 🔖</div>
   <div class="grid" id="instaFeed"></div>
 
   <script>
     fetch("https://notionwidget.vercel.app/feed.json")
-  .then(response => response.json())
-  .then(posts => {
-    const now = new Date();
-    const upcoming = posts
-      .filter(p => new Date(p.date) >= now)
-      .sort((a, b) => new Date(a.date) - new Date(b.date))
-      .slice(0, 12);
+      .then(response => response.json())
+      .then(posts => {
+        const now = new Date();
+        const upcoming = posts
+          .filter(p => new Date(p.date) >= now)
+          .sort((a, b) => new Date(a.date) - new Date(b.date))
+          .slice(0, 12);
 
-    const container = document.getElementById("instaFeed");
+        const container = document.getElementById("instaFeed");
 
-    upcoming.forEach(post => {
-      const cell = document.createElement("div");
-      cell.className = "cell";
+        upcoming.forEach((post, idx) => {
+          const cell = document.createElement("div");
+          cell.className = "cell";
 
-      let imageWrapper;
+          if (post.type === "carrousel" && post.images.length > 1) {
+            const carousel = document.createElement("div");
+            carousel.className = "carousel";
 
-      if (post.type === "carrousel" && post.images.length > 1) {
-        const carousel = document.createElement("div");
-        carousel.className = "carousel";
+            const imgElements = post.images.map((imgUrl, i) => {
+              const img = document.createElement("img");
+              img.src = imgUrl;
+              if (i === 0) img.classList.add("active");
+              carousel.appendChild(img);
+              return img;
+            });
 
-        const imgElements = post.images.map((imgUrl, i) => {
-          const img = document.createElement("img");
-          img.src = imgUrl;
-          img.loading = "lazy";
-          if (i === 0) img.classList.add("active");
-          carousel.appendChild(img);
-          return img;
+            const leftArrow = document.createElement("div");
+            leftArrow.className = "nav-arrow left";
+            leftArrow.innerHTML = "‹";
+            const rightArrow = document.createElement("div");
+            rightArrow.className = "nav-arrow right";
+            rightArrow.innerHTML = "›";
+
+            let current = 0;
+            leftArrow.onclick = () => {
+              imgElements[current].classList.remove("active");
+              current = (current - 1 + imgElements.length) % imgElements.length;
+              imgElements[current].classList.add("active");
+            };
+            rightArrow.onclick = () => {
+              imgElements[current].classList.remove("active");
+              current = (current + 1) % imgElements.length;
+              imgElements[current].classList.add("active");
+            };
+
+            carousel.appendChild(leftArrow);
+            carousel.appendChild(rightArrow);
+            cell.appendChild(carousel);
+          } else {
+            const img = document.createElement("img");
+            img.src = post.images[0];
+            cell.appendChild(img);
+          }
+
+          const overlay = document.createElement("div");
+          overlay.className = "overlay";
+          overlay.innerText = post.title;
+          cell.appendChild(overlay);
+
+          container.appendChild(cell);
         });
-
-        const leftArrow = document.createElement("div");
-        leftArrow.className = "nav-arrow left";
-        leftArrow.innerHTML = "‹";
-        const rightArrow = document.createElement("div");
-        rightArrow.className = "nav-arrow right";
-        rightArrow.innerHTML = "›";
-
-        let current = 0;
-        leftArrow.onclick = () => {
-          imgElements[current].classList.remove("active");
-          current = (current - 1 + imgElements.length) % imgElements.length;
-          imgElements[current].classList.add("active");
-        };
-        rightArrow.onclick = () => {
-          imgElements[current].classList.remove("active");
-          current = (current + 1) % imgElements.length;
-          imgElements[current].classList.add("active");
-        };
-
-        carousel.appendChild(leftArrow);
-        carousel.appendChild(rightArrow);
-        imageWrapper = carousel;
-      } else {
-        const img = document.createElement("img");
-        img.src = post.images[0];
-        img.loading = "lazy";
-        imageWrapper = img;
-      }
-
-      // Crée l'overlay avec title + tag
-      const overlay = document.createElement("div");
-      overlay.className = "overlay";
-
-      const title = document.createElement("div");
-      title.className = "overlay-title";
-      title.textContent = post.title || '';
-
-      const tag = document.createElement("div");
-      tag.className = "overlay-tag";
-      tag.textContent = post.tag || '';
-
-      overlay.appendChild(title);
-      overlay.appendChild(tag);
-
-      cell.appendChild(imageWrapper);
-      cell.appendChild(overlay);
-      container.appendChild(cell);
-    });
-  });
+      });
+  </script>
+</body>
+</html>
