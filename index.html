@@ -111,7 +111,7 @@
   <div class="grid" id="instaFeed"></div>
 
   <script>
-    fetch("feed.json")
+    fetch("https://notionwidget.vercel.app/feed.json")
       .then(response => response.json())
       .then(posts => {
         const now = new Date();
