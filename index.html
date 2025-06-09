@@ -4,11 +4,7 @@
   <meta charset="UTF-8">
   <title>Feed Instagram 3x4</title>
   <style>
-    body 
-      <div class="logo">
-    <img src="image 1.png" alt="Instagram Logo">
-  </div>
-    {
+    body {
       background: white;
       font-family: sans-serif;
       margin: 0;
@@ -39,17 +35,15 @@
     .cell:hover {
       transform: scale(1.03);
     }
-    .carousel {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-    .carousel img {
+    .carousel, .carousel img,
+    .cell img:not(.carousel img) {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: none;
       border-radius: 6px;
+    }
+    .carousel img {
+      display: none;
     }
     .carousel img.active {
       display: block;
@@ -73,39 +67,49 @@
     .nav-arrow.right {
       right: 4px;
     }
-    .cell img:not(.carousel img) {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 6px;
-    }
     .overlay {
       position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
       bottom: 0;
-      background: rgba(0,0,0,0.6);
-      color: white;
-      font-size: 12px;
-      padding: 4px;
-      width: 100%;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       opacity: 0;
       transition: opacity 0.3s ease;
-      border-radius: 0 0 6px 6px;
+      background: rgba(0,0,0,0.4);
+      color: white;
+      font-size: 12px;
+      padding: 6px;
     }
     .cell:hover .overlay {
       opacity: 1;
     }
+    .overlay-title {
+      font-weight: bold;
+      text-align: left;
+    }
+    .overlay-tag {
+      text-align: right;
+      font-style: italic;
+      font-size: 11px;
+    }
     .logo {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-.logo img {
-  max-width: 180px;
-  height: auto;
-}
+      text-align: center;
+      margin: 10px 0;
+    }
+    .logo img {
+      max-width: 180px;
+      height: auto;
+    }
   </style>
 </head>
 <body>
+
+  <div class="logo">
+    <img src="image 1.png" alt="Instagram Logo">
+  </div>
 
   <div class="icons">📷 🎬 🔖</div>
   <div class="grid" id="instaFeed"></div>
@@ -122,7 +126,7 @@
 
         const container = document.getElementById("instaFeed");
 
-        upcoming.forEach((post, idx) => {
+        upcoming.forEach(post => {
           const cell = document.createElement("div");
           cell.className = "cell";
 
@@ -168,9 +172,19 @@
 
           const overlay = document.createElement("div");
           overlay.className = "overlay";
-          overlay.innerText = post.title;
-          cell.appendChild(overlay);
 
+          const title = document.createElement("div");
+          title.className = "overlay-title";
+          title.textContent = post.title;
+
+          const tag = document.createElement("div");
+          tag.className = "overlay-tag";
+          tag.textContent = post.tag || '';
+
+          overlay.appendChild(title);
+          overlay.appendChild(tag);
+
+          cell.appendChild(overlay);
           container.appendChild(cell);
         });
       });
