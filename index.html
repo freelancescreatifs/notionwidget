@@ -116,78 +116,81 @@
 
   <script>
     fetch("https://notionwidget.vercel.app/feed.json")
-      .then(response => response.json())
-      .then(posts => {
-        const now = new Date();
-        const upcoming = posts
-          .filter(p => new Date(p.date) >= now)
-          .sort((a, b) => new Date(a.date) - new Date(b.date))
-          .slice(0, 12);
+  .then(response => response.json())
+  .then(posts => {
+    const now = new Date();
+    const upcoming = posts
+      .filter(p => new Date(p.date) >= now)
+      .sort((a, b) => new Date(a.date) - new Date(b.date))
+      .slice(0, 12);
 
-        const container = document.getElementById("instaFeed");
+    const container = document.getElementById("instaFeed");
 
-        upcoming.forEach(post => {
-          const cell = document.createElement("div");
-          cell.className = "cell";
+    upcoming.forEach(post => {
+      const cell = document.createElement("div");
+      cell.className = "cell";
 
-          if (post.type === "carrousel" && post.images.length > 1) {
-            const carousel = document.createElement("div");
-            carousel.className = "carousel";
+      let imageWrapper;
 
-            const imgElements = post.images.map((imgUrl, i) => {
-              const img = document.createElement("img");
-              img.src = imgUrl;
-              if (i === 0) img.classList.add("active");
-              carousel.appendChild(img);
-              return img;
-            });
+      if (post.type === "carrousel" && post.images.length > 1) {
+        const carousel = document.createElement("div");
+        carousel.className = "carousel";
 
-            const leftArrow = document.createElement("div");
-            leftArrow.className = "nav-arrow left";
-            leftArrow.innerHTML = "‹";
-            const rightArrow = document.createElement("div");
-            rightArrow.className = "nav-arrow right";
-            rightArrow.innerHTML = "›";
-
-            let current = 0;
-            leftArrow.onclick = () => {
-              imgElements[current].classList.remove("active");
-              current = (current - 1 + imgElements.length) % imgElements.length;
-              imgElements[current].classList.add("active");
-            };
-            rightArrow.onclick = () => {
-              imgElements[current].classList.remove("active");
-              current = (current + 1) % imgElements.length;
-              imgElements[current].classList.add("active");
-            };
-
-            carousel.appendChild(leftArrow);
-            carousel.appendChild(rightArrow);
-            cell.appendChild(carousel);
-          } else {
-            const img = document.createElement("img");
-            img.src = post.images[0];
-            cell.appendChild(img);
-          }
-
-          const overlay = document.createElement("div");
-          overlay.className = "overlay";
-
-          const title = document.createElement("div");
-          title.className = "overlay-title";
-          title.textContent = post.title;
-
-          const tag = document.createElement("div");
-          tag.className = "overlay-tag";
-          tag.textContent = post.tag || '';
-
-          overlay.appendChild(title);
-          overlay.appendChild(tag);
-
-          cell.appendChild(overlay);
-          container.appendChild(cell);
+        const imgElements = post.images.map((imgUrl, i) => {
+          const img = document.createElement("img");
+          img.src = imgUrl;
+          img.loading = "lazy";
+          if (i === 0) img.classList.add("active");
+          carousel.appendChild(img);
+          return img;
         });
-      });
-  </script>
-</body>
-</html>
+
+        const leftArrow = document.createElement("div");
+        leftArrow.className = "nav-arrow left";
+        leftArrow.innerHTML = "‹";
+        const rightArrow = document.createElement("div");
+        rightArrow.className = "nav-arrow right";
+        rightArrow.innerHTML = "›";
+
+        let current = 0;
+        leftArrow.onclick = () => {
+          imgElements[current].classList.remove("active");
+          current = (current - 1 + imgElements.length) % imgElements.length;
+          imgElements[current].classList.add("active");
+        };
+        rightArrow.onclick = () => {
+          imgElements[current].classList.remove("active");
+          current = (current + 1) % imgElements.length;
+          imgElements[current].classList.add("active");
+        };
+
+        carousel.appendChild(leftArrow);
+        carousel.appendChild(rightArrow);
+        imageWrapper = carousel;
+      } else {
+        const img = document.createElement("img");
+        img.src = post.images[0];
+        img.loading = "lazy";
+        imageWrapper = img;
+      }
+
+      // Crée l'overlay avec title + tag
+      const overlay = document.createElement("div");
+      overlay.className = "overlay";
+
+      const title = document.createElement("div");
+      title.className = "overlay-title";
+      title.textContent = post.title || '';
+
+      const tag = document.createElement("div");
+      tag.className = "overlay-tag";
+      tag.textContent = post.tag || '';
+
+      overlay.appendChild(title);
+      overlay.appendChild(tag);
+
+      cell.appendChild(imageWrapper);
+      cell.appendChild(overlay);
+      container.appendChild(cell);
+    });
+  });
