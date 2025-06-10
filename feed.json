@@ -3,6 +3,7 @@
     "type": "carrousel",
     "title": "Carrousel Astuces",
     "date": "2025-06-10",
+    "tag": "🎓 Tutoriel",
     "images": [
       "https://via.placeholder.com/300?text=Slide+1",
       "https://via.placeholder.com/300?text=Slide+2",
@@ -13,6 +14,7 @@
     "type": "image",
     "title": "Post 2",
     "date": "2025-06-12",
+    "tag": "📄 Fiche pratique",
     "images": [
       "https://via.placeholder.com/300?text=Post+2"
     ]
@@ -21,6 +23,7 @@
     "type": "image",
     "title": "Post 3",
     "date": "2025-06-13",
+    "tag": "🚀 Contenu viral",
     "images": [
       "https://via.placeholder.com/300?text=Post+3"
     ]
@@ -29,6 +32,7 @@
     "type": "image",
     "title": "Post 4",
     "date": "2025-06-14",
+    "tag": "💬 Témoignage",
     "images": [
       "https://via.placeholder.com/300?text=Post+4"
     ]
@@ -37,6 +41,7 @@
     "type": "image",
     "title": "Post 5",
     "date": "2025-06-15",
+    "tag": "📢 Annonce",
     "images": [
       "https://via.placeholder.com/300?text=Post+5"
     ]
@@ -45,6 +50,7 @@
     "type": "image",
     "title": "Post 6",
     "date": "2025-06-16",
+    "tag": "🎙 Podcast",
     "images": [
       "https://via.placeholder.com/300?text=Post+6"
     ]
@@ -53,6 +59,7 @@
     "type": "image",
     "title": "Post 7",
     "date": "2025-06-17",
+    "tag": "📸 Backstage",
     "images": [
       "https://via.placeholder.com/300?text=Post+7"
     ]
@@ -61,6 +68,7 @@
     "type": "image",
     "title": "Post 8",
     "date": "2025-06-18",
+    "tag": "🧠 Mindset",
     "images": [
       "https://via.placeholder.com/300?text=Post+8"
     ]
@@ -69,6 +77,7 @@
     "type": "image",
     "title": "Post 9",
     "date": "2025-06-19",
+    "tag": "📊 Statistique",
     "images": [
       "https://via.placeholder.com/300?text=Post+9"
     ]
@@ -77,6 +86,7 @@
     "type": "image",
     "title": "Post 10",
     "date": "2025-06-20",
+    "tag": "💡 Astuce éclair",
     "images": [
       "https://via.placeholder.com/300?text=Post+10"
     ]
@@ -85,6 +95,7 @@
     "type": "image",
     "title": "Post 11",
     "date": "2025-06-21",
+    "tag": "💼 Cas client",
     "images": [
       "https://via.placeholder.com/300?text=Post+11"
     ]
@@ -93,6 +104,7 @@
     "type": "image",
     "title": "Post 12",
     "date": "2025-06-22",
+    "tag": "📣 Lancement produit",
     "images": [
       "https://via.placeholder.com/300?text=Post+12"
     ]
