@@ -3,7 +3,6 @@
     "type": "carrousel",
     "title": "Carrousel Astuces",
     "date": "2025-06-10",
-    "tag": "🎓 Tutoriel",
     "images": [
       "https://via.placeholder.com/300?text=Slide+1",
       "https://via.placeholder.com/300?text=Slide+2",
@@ -12,101 +11,90 @@
   },
   {
     "type": "image",
-    "title": "Post 2",
+    "title": "Vid\u00e9o teaser",
+    "date": "2025-06-11",
+    "images": [
+      "https://via.placeholder.com/300?text=Vid\u00e9o"
+    ]
+  },
+  {
+    "type": "image",
+    "title": "Astuce express",
     "date": "2025-06-12",
-    "tag": "📄 Fiche pratique",
     "images": [
-      "https://via.placeholder.com/300?text=Post+2"
+      "https://via.placeholder.com/300?text=Astuce"
     ]
   },
   {
     "type": "image",
-    "title": "Post 3",
+    "title": "Behind the scenes",
     "date": "2025-06-13",
-    "tag": "🚀 Contenu viral",
     "images": [
-      "https://via.placeholder.com/300?text=Post+3"
+      "https://via.placeholder.com/300?text=BTS"
     ]
   },
   {
     "type": "image",
-    "title": "Post 4",
+    "title": "T\u00e9moignage client",
     "date": "2025-06-14",
-    "tag": "💬 Témoignage",
     "images": [
-      "https://via.placeholder.com/300?text=Post+4"
+      "https://via.placeholder.com/300?text=Temoignage"
     ]
   },
   {
     "type": "image",
-    "title": "Post 5",
+    "title": "Podcast du jour",
     "date": "2025-06-15",
-    "tag": "📢 Annonce",
     "images": [
-      "https://via.placeholder.com/300?text=Post+5"
+      "https://via.placeholder.com/300?text=Podcast"
     ]
   },
   {
     "type": "image",
-    "title": "Post 6",
+    "title": "R\u00e9el cr\u00e9atif",
     "date": "2025-06-16",
-    "tag": "🎙 Podcast",
     "images": [
-      "https://via.placeholder.com/300?text=Post+6"
+      "https://via.placeholder.com/300?text=Reel"
     ]
   },
   {
     "type": "image",
-    "title": "Post 7",
+    "title": "Tip visuel",
     "date": "2025-06-17",
-    "tag": "📸 Backstage",
     "images": [
-      "https://via.placeholder.com/300?text=Post+7"
+      "https://via.placeholder.com/300?text=Tips"
     ]
   },
   {
     "type": "image",
-    "title": "Post 8",
+    "title": "Identifi\u00e9 !",
     "date": "2025-06-18",
-    "tag": "🧠 Mindset",
     "images": [
-      "https://via.placeholder.com/300?text=Post+8"
+      "https://via.placeholder.com/300?text=Tag"
     ]
   },
   {
     "type": "image",
-    "title": "Post 9",
+    "title": "Collab du mois",
     "date": "2025-06-19",
-    "tag": "📊 Statistique",
     "images": [
-      "https://via.placeholder.com/300?text=Post+9"
+      "https://via.placeholder.com/300?text=Collab"
     ]
   },
   {
     "type": "image",
-    "title": "Post 10",
+    "title": "Promo express",
     "date": "2025-06-20",
-    "tag": "💡 Astuce éclair",
     "images": [
-      "https://via.placeholder.com/300?text=Post+10"
+      "https://via.placeholder.com/300?text=Promo"
     ]
   },
   {
     "type": "image",
-    "title": "Post 11",
+    "title": "Live replay",
     "date": "2025-06-21",
-    "tag": "💼 Cas client",
     "images": [
-      "https://via.placeholder.com/300?text=Post+11"
-    ]
-  },
-  {
-    "type": "image",
-    "title": "Post 12",
-    "date": "2025-06-22",
-    "tag": "📣 Lancement produit",
-    "images": [
-      "https://via.placeholder.com/300?text=Post+12"
+      "https://via.placeholder.com/300?text=Live"
     ]
   }
 ]
