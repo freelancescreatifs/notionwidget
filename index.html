@@ -114,7 +114,7 @@
       .then(posts => {
         const now = new Date();
         const upcoming = posts
-          .filter(p => new Date(p.date) >= now)
+        const upcoming = posts
           .sort((a, b) => new Date(a.date) - new Date(b.date))
           .slice(0, 12);
 
