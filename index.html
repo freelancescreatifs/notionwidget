@@ -113,6 +113,10 @@
       .then(response => response.json())
       .then(posts => {
         
+        const upcoming = posts
+  .sort((a, b) => new Date(a.date) - new Date(b.date))
+  .slice(0, 12);
+
         const now = new Date();
         const upcoming = posts
         const upcoming = posts
